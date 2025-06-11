@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Your Website - WebsiteInAFlash</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><i class="fas fa-bolt"></i> WebsiteInAFlash</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Back to Home</a></li>
+                    <li><a href="index.html#products">Packages</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Order Section -->
+    <section class="order-section">
+        <div class="container">
+            <div class="order-header">
+                <h1>Complete Your Website Order</h1>
+                <p>Tell us about your dream website and choose your payment method</p>
+            </div>
+
+            <div class="order-container">
+                <!-- Selected Package Display -->
+                <div class="selected-package" id="selectedPackage">
+                    <h3><i class="fas fa-package"></i> Selected Package</h3>
+                    <div class="package-details" id="packageDetails">
+                        <!-- Package details will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <form class="order-form" id="orderForm">
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company/Organization (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                    </div>
+
+                    <!-- Website Description -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-globe"></i> Website Description *</h3>
+                        <p class="section-description">Please provide detailed information about your website requirements</p>
+                        
+                        <div class="form-group">
+                            <label for="websitePurpose">What is the main purpose of your website? *</label>
+                            <select id="websitePurpose" name="websitePurpose" required>
+                                <option value="">Select purpose...</option>
+                                <option value="business">Business/Corporate</option>
+                                <option value="portfolio">Portfolio/Personal</option>
+                                <option value="ecommerce">E-commerce/Online Store</option>
+                                <option value="blog">Blog/Content Site</option>
+                                <option value="nonprofit">Non-profit/Charity</option>
+                                <option value="restaurant">Restaurant/Food Service</option>
+                                <option value="education">Education/Training</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="businessDescription">Describe your business/project in detail *</label>
+                            <textarea id="businessDescription" name="businessDescription" rows="4" required placeholder="Tell us about your business, services, products, target audience, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="websiteGoals">What are your main goals for this website? *</label>
+                            <textarea id="websiteGoals" name="websiteGoals" rows="3" required placeholder="e.g., Generate leads, sell products online, showcase portfolio, provide information, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="targetAudience">Who is your target audience? *</label>
+                            <textarea id="targetAudience" name="targetAudience" rows="2" required placeholder="Describe your ideal visitors/customers"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contentPages">What pages/sections do you want on your website? *</label>
+                            <textarea id="contentPages" name="contentPages" rows="3" required placeholder="e.g., Home, About, Services, Contact, Portfolio, Blog, Products, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designPreferences">Design preferences and inspiration</label>
+                            <textarea id="designPreferences" name="designPreferences" rows="3" placeholder="Describe your preferred style, colors, any websites you like, specific features you want, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialRequirements">Special requirements or features</label>
+                            <textarea id="specialRequirements" name="specialRequirements" rows="2" placeholder="Online booking, payment integration, multilingual, specific integrations, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="existingWebsite">Do you have an existing website or domain?</label>
+                            <input type="text" id="existingWebsite" name="existingWebsite" placeholder="Enter your current website URL or domain name (if any)">
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+                        <p class="section-description">Choose your preferred payment method</p>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-option">
+                                <input type="radio" id="card" name="paymentMethod" value="card" required>
+                                <label for="card" class="payment-label">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                    <div class="card-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="paytm" name="paymentMethod" value="paytm">
+                                <label for="paytm" class="payment-label">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Paytm</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="upi" name="paymentMethod" value="upi">
+                                <label for="upi" class="payment-label">
+                                    <i class="fas fa-qrcode"></i>
+                                    <span>UPI (Google Pay, PhonePe, etc.)</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="netbanking" name="paymentMethod" value="netbanking">
+                                <label for="netbanking" class="payment-label">
+                                    <i class="fas fa-university"></i>
+                                    <span>Net Banking</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="applepay" name="paymentMethod" value="applepay">
+                                <label for="applepay" class="payment-label">
+                                    <i class="fab fa-apple-pay"></i>
+                                    <span>Apple Pay</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="googlepay" name="paymentMethod" value="googlepay">
+                                <label for="googlepay" class="payment-label">
+                                    <i class="fab fa-google-pay"></i>
+                                    <span>Google Pay</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                <label for="paypal" class="payment-label">
+                                    <i class="fab fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="razorpay" name="paymentMethod" value="razorpay">
+                                <label for="razorpay" class="payment-label">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <span>Razorpay</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                        <div class="order-summary">
+                            <div class="summary-item">
+                                <span class="item-name" id="summaryPackageName">Package Name</span>
+                                <span class="item-price" id="summaryPackagePrice">₹0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="item-name">Tax (18% GST)</span>
+                                <span class="item-price" id="summaryTax">₹0</span>
+                            </div>
+                            <div class="summary-total">
+                                <span class="total-label">Total Amount</span>
+                                <span class="total-price" id="summaryTotal">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-place-order">
+                            <i class="fas fa-lock"></i> Place Secure Order
+                        </button>
+                        <p class="security-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Your payment information is secure and encrypted
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-bolt"></i> WebsiteInAFlash</h3>
+                    <p>Your trusted web development partner for professional websites.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: websiteinaflash@outlook.com</p>
+                    <p>WhatsApp: +91 63164555</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebsiteInAFlash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/order.js"></script>
+</body>
+</html>
+
